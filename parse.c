@@ -21,7 +21,7 @@ void parseline(line_t *line, char *buffer)
 	token = strtok(buffer, " '\n'");
 	for (i = 0; token && i < 2; i++)
 	{
-		line->contetn[i] = token;
+		line->content[i] = token;
 		token = strtok(NULL, " \n");
 	}
 	line->content[i] = NULL;
@@ -56,7 +56,7 @@ void parsefile(FILE *file)
 		line.number++;
 		parseline(&line, data->buf);
 		if (line.content)
-			op_selector(line, data)($(data->stack), line.number);
+			op_selector(line, data)(&(data->stack), line.number);
 	}
 	free(data->buf);
 	free_stack(&(data->stack));
