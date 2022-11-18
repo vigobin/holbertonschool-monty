@@ -33,4 +33,39 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct line - cntents of line and corresponding number.
+ * @content: array of tokens read from the line.
+ * @number the line number.
+ *
+ * Description: contents of a line and corresponding number.
+ */
+
+typedef struct line
+{
+	unsigned int number;
+	char **content;
+} line_t;
+
+/**
+ * struct data_s - contains the script name.
+ * @buf: buffer.
+ * @stack: read from stack.
+ * @FILE: filename.
+ *
+ * Description: contains the filename and buffer.
+ */
+
+typedef struct data_s
+{
+	char *buf;
+	stack_t *stack;
+	FILE *file;
+}data_t;
+
+void (*op_selector(line_t line, data_t *data))(stack_t **, unsigned int)
+
+void parseline(line_t *line, char *buffer);
+void parsefile(FILE *file);
+
 #endif
