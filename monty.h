@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -63,9 +65,24 @@ typedef struct data_s
 	FILE *file;
 }data_t;
 
+typedef struct arg_s
+{
+	int arg;
+	int flag;
+} arg_t;
+
+extern arg_t arg;
+
 void (*op_selector(line_t line, data_t *data))(stack_t **, unsigned int)
 
 void parseline(line_t *line, char *buffer);
 void parsefile(FILE *file);
+void pall(stack_t **stack, unsigned int nline);
+void push(stack_t **stack, unsigned int nline);
+void pint(stack_t **stack, unsigned int nline);
+void pop(stack_t **stack, unsigned int nline);
+void swap(stack_t **stack, unsigned int nline);
+void nop(stack_t **stack, unsigned int nline);
+
 
 #endif
