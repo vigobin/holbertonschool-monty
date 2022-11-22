@@ -15,6 +15,7 @@ void add(stack_t **h, unsigned int ln)
 	if (*h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", ln);
+		isFail = 1;
 		return;
 	}
 

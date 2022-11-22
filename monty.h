@@ -42,6 +42,7 @@ typedef struct instruction_s
 #include <fcntl.h>
 #include <unistd.h>
 
+extern unsigned int isFail;
 
 /* function prototypes */
 int read_file(FILE *fd);
