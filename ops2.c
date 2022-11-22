@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * pop - pop head value of stack.
+ * @h: head of stack.
+ * @ln: line number.
+ */
 
 void pop(stack_t **h, unsigned int ln)
 {

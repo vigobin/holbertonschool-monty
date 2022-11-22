@@ -40,16 +40,15 @@ void nop(stack_t **h, unsigned int ln)
 }
 void free_stack(stack_t *head)
 {
-        stack_t *temp = head;
+	stack_t *temp = head;
 
-        if (temp == NULL)
-                return;
-
-        while (head)
-        {
-                temp = head;
-                head = head->next;
-                free(temp);
-        }
-        free(head);
+	if (temp == NULL)
+		return;
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+	free(head);
 }
