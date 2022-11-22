@@ -13,6 +13,7 @@ void pop(stack_t **h, unsigned int ln)
 	if (*h == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", ln);
+		isFail = 1;
 		return;
 	}
 	*h = (*h)->next;
@@ -34,6 +35,7 @@ void swap(stack_t **h, unsigned int ln)
 	if (*h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", ln);
+		isFail = 1;
 		return;
 	}
 	temp = (*h)->next;

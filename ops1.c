@@ -60,6 +60,7 @@ void pint(stack_t **h, unsigned int ln)
 	if (*h == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", ln);
+		isFail = 1;
 		return;
 	}
 	printf("%d\n", (*h)->n);
