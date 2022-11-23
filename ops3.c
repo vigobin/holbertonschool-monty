@@ -38,6 +38,13 @@ void nop(stack_t **h, unsigned int ln)
 	(void)h;
 	(void)ln;
 }
+
+/**
+ * free_stack - frees the stack.
+ * @head: head of stack.
+ * Return: nothing.
+ */
+
 void free_stack(stack_t *head)
 {
 	stack_t *temp = head;
